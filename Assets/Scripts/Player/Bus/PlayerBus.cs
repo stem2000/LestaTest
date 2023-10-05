@@ -10,6 +10,7 @@ namespace Player
 
         private IInputProvider _inputProvider;
         private IStatsProvider _statsProvider;
+        private IWorldInteractionsProvider _worldInteractionsProvider;
 
 
         private void Awake()
@@ -23,15 +24,11 @@ namespace Player
             _stateMachine.SwapState();
         }
 
-        private void FixedUpdate()
-        {
-
-        }
-
         private void InitializeComponents()
         {
             _inputProvider = new InputBus(GetComponent<IInputProvider>());
             _statsProvider = new StatsBus(_stats);
+            _worldInteractionsProvider = new WorldInteractionsBus(GetComponent<IWorldInteractionsProvider>());
 
             _stateMachine.Initialize(this);
             foreach(var component in GetComponents<IInitializedComponent>())
@@ -55,6 +52,10 @@ namespace Player
             return _statsProvider;
         }
 
+        public IWorldInteractionsProvider GetWorldInteractionProvider()
+        {
+            return _worldInteractionsProvider;
+        }
     }
 }
 

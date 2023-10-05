@@ -4,21 +4,21 @@ namespace Player
 {
     public class WorldInteractor : MonoBehaviour, IWorldInteractionsProvider
     {
-        bool IWorldInteractionsProvider.IsOnGround { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+        bool IWorldInteractionsProvider.IsOnGround { get { return _grounded;}  }
 
-        private void OnCollisionEnter(Collision collision)
-        {
+        private bool _grounded;
 
-        }
 
         private void OnCollisionExit(Collision collision)
         {
-
+            _grounded = false;
         }
 
         private void OnCollisionStay(Collision collision)
         {
-
+            foreach (var contact in collision.contacts)
+                if (Vector3.Angle(contact.normal, Vector3.up) < 45)
+                    _grounded = true;
         }
     }
 }

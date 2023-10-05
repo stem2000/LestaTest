@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 namespace Player
 {
-    [RequireComponent(typeof(PlayerBus), typeof(Rigidbody))]
+    [RequireComponent(typeof(Rigidbody))]
     public class Movement : MonoBehaviour, IStateSwapHandler, IInitializedComponent
     {
         private IInputProvider _inputProvider;

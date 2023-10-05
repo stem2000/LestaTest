@@ -8,5 +8,6 @@ namespace Player
     {
         public IInputProvider GetInputProvider();
         public IStatsProvider GetStatsProvider();
+        public IWorldInteractionsProvider GetWorldInteractionProvider();
     }
 }

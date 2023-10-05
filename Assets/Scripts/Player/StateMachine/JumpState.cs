@@ -5,9 +5,11 @@ using UnityEngine;
 public class JumpState : State
 {
     private IInputProvider _inputProvider;
+    private IWorldInteractionsProvider _worldInterationsProvider;
     public override void Initialize(IComponentsProvider componentsProvider)
     {
         _inputProvider = componentsProvider.GetInputProvider();
+        _worldInterationsProvider = componentsProvider.GetWorldInteractionProvider();
     }
 
     public override bool WantSwapDown()
@@ -17,6 +19,6 @@ public class JumpState : State
 
     public override bool WantSwapUp()
     {       
-        return _inputProvider.GetJumpInput();
+        return _inputProvider.GetJumpInput() && _worldInterationsProvider.IsOnGround;
     }
 }

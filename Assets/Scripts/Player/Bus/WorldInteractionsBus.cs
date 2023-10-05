@@ -2,18 +2,22 @@ using UnityEngine;
 
 namespace Player
 {
-    public class WorldInteractionsBus : MonoBehaviour
+    public class WorldInteractionsBus : IWorldInteractionsProvider
     {
-        // Start is called before the first frame update
-        void Start()
-        {
+        public bool IsOnGround { get { return GetOnGround(); } }
 
+        private IWorldInteractionsProvider _worldInteractionsProvider;
+
+        public WorldInteractionsBus(IWorldInteractionsProvider worldInteractionsProvider)
+        {
+            _worldInteractionsProvider = worldInteractionsProvider;
         }
 
-        // Update is called once per frame
-        void Update()
+        private bool GetOnGround()
         {
-
+            if(_worldInteractionsProvider != null)
+                return _worldInteractionsProvider.IsOnGround;
+            return true;
         }
     }
 }
