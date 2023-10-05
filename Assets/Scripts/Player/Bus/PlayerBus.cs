@@ -6,7 +6,11 @@ namespace Player
     public class PlayerBus : MonoBehaviour, IComponentsProvider
     {
         [SerializeField] private StateMachine _stateMachine;
+        [SerializeField] private PlayerStats _stats;
+
         private IInputProvider _inputProvider;
+        private IStatsProvider _statsProvider;
+
 
         private void Awake()
         {
@@ -26,7 +30,9 @@ namespace Player
 
         private void InitializeComponents()
         {
-            _inputProvider = GetComponent<IInputProvider>();
+            _inputProvider = new InputBus(GetComponent<IInputProvider>());
+            _statsProvider = new StatsBus(_stats);
+
             _stateMachine.Initialize(this);
             foreach(var component in GetComponents<IInitializedComponent>())
                 component.Initialize(this);
@@ -44,6 +50,10 @@ namespace Player
             return _inputProvider;
         }
 
+        public IStatsProvider GetStatsProvider()
+        {
+            return _statsProvider;
+        }
 
     }
 }

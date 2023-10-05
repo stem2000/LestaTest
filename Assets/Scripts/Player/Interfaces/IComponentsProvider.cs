@@ -7,5 +7,6 @@ namespace Player
     public interface IComponentsProvider
     {
         public IInputProvider GetInputProvider();
+        public IStatsProvider GetStatsProvider();
     }
 }
