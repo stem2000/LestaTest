@@ -1,18 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Player 
 { 
     public class InputController : MonoBehaviour, IInputProvider
     {
         protected PlayerInput _playerInput;
+        private bool _isJumpTriggered = false;
 
         private void Awake()
         {
             _playerInput = new PlayerInput();
             _playerInput.Enable();
         }
+
 
         public Vector3 GetDirectionInput()
         {
@@ -24,7 +25,7 @@ namespace Player
 
         public bool GetJumpInput()
         {
-            return _playerInput.Gameplay.Jump.ReadValue<bool>();
+            return _playerInput.Gameplay.Jump.triggered;
         }
 
         public Vector2 GetRotationInput()

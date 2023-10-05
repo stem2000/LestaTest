@@ -1,18 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
+using Player;
 using UnityEngine;
 
-public class JumpState : MonoBehaviour
+[CreateAssetMenu(menuName = "Scriptables/StateMachine/States/JumpState")]
+public class JumpState : State
 {
-    // Start is called before the first frame update
-    void Start()
+    private IInputProvider _inputProvider;
+    public override void Initialize(IComponentsProvider componentsProvider)
     {
-        
+        _inputProvider = componentsProvider.GetInputProvider();
     }
 
-    // Update is called once per frame
-    void Update()
+    public override bool WantSwapDown()
     {
-        
+        return !_inputProvider.GetJumpInput();
+    }
+
+    public override bool WantSwapUp()
+    {       
+        return _inputProvider.GetJumpInput();
     }
 }

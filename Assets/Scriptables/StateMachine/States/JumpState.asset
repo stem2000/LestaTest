@@ -9,10 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0286537e8705f2e40ab7e188e48625a9, type: 3}
-  m_Name: IdleState
+  m_Script: {fileID: 11500000, guid: 4e2b0da5615425740aa6c565999bae58, type: 3}
+  m_Name: JumpState
   m_EditorClassIdentifier: 
-  _upperStates:
-  - {fileID: 11400000}
-  - {fileID: 11400000, guid: 3740f9f35a533444ebc7749364bd2999, type: 2}
-  - {fileID: 11400000, guid: 8e6ed24ce987bd7479eafb9b40d86d55, type: 2}
+  _upperStates: []

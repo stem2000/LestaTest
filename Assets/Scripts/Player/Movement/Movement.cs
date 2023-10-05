@@ -13,16 +13,14 @@ namespace Player
         private Rigidbody _rigidbody;
         private UnityAction _currentMove;
 
-
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody>();
-            _currentMove = Idle;
         }
 
         private void FixedUpdate()
         {
-            _currentMove.Invoke();
+            _currentMove?.Invoke();
         }
 
         private void Idle()
@@ -36,12 +34,12 @@ namespace Player
             var friction = _statsProvider.GetFriction();
 
             _rigidbody.AddForce(velocity, ForceMode.VelocityChange);
-            _rigidbody.AddForce(-_rigidbody.velocity.x * friction, 0f, -_rigidbody.velocity.z * friction, ForceMode.VelocityChange);
+            _rigidbody.AddForce(-_rigidbody.velocity.x * friction, 0f, -_rigidbody.velocity.z * friction , ForceMode.VelocityChange);
         }
 
         private void Jump()
         {
-            _rigidbody.AddForce(_inputProvider.GetDirectionInput() * 10, ForceMode.Impulse);
+            _rigidbody.AddForce(Vector3.up * _statsProvider.GetJumpForce(), ForceMode.Impulse);
         }
 
         public void HandleStateSwap(Type stateType)
@@ -51,7 +49,7 @@ namespace Player
             if(stateType == typeof(RunState))
                 _currentMove = Run;
             if(stateType == typeof(JumpState))
-                _currentMove = Jump;
+                Jump();
         }
 
         public void Initialize(IComponentsProvider componentsProvider)

@@ -12,9 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0f6475d03043164ebc7b4f54a4089cb, type: 3}
   m_Name: StateMachine
   m_EditorClassIdentifier: 
-  OnStateWasSwapped:
-    m_PersistentCalls:
-      m_Calls: []
   _states:
   - {fileID: 11400000, guid: 3f72d25c128b5ef4fa438912f70fd7fa, type: 2}
   - {fileID: 11400000, guid: 3740f9f35a533444ebc7749364bd2999, type: 2}
+  - {fileID: 11400000, guid: 8e6ed24ce987bd7479eafb9b40d86d55, type: 2}
