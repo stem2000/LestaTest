@@ -10,7 +10,7 @@ namespace Player
         [SerializeField] private float _jumpForce;
 
         public float Friction { get { return _friction; } }
-        public float MoveSpeed { get { return _runSpeed; } }
+        public float RunSpeed { get { return _runSpeed; } }
         public float JumpForce { get { return _jumpForce; } }
     }
 }

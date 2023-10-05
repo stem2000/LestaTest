@@ -13,19 +13,8 @@ namespace Player
             _stats = stats;
         }
 
-        public float GetFriction()
-        {
-            return _stats.Friction;
-        }
-
-        public float GetJumpForce()
-        {
-            return _stats.JumpForce;
-        }
-
-        public float GetRunSpeed()
-        {
-            return _stats.MoveSpeed;
-        }
+        float IStatsProvider.Friction { get {return _stats.Friction;} }
+        float IStatsProvider.RunSpeed { get { return _stats.RunSpeed; } }
+        float IStatsProvider.JumpForce { get { return _stats.JumpForce; } }
     }
 }

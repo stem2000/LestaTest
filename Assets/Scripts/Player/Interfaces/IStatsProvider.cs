@@ -6,9 +6,9 @@ namespace Player
 {
     public interface IStatsProvider
     {
-        public float GetFriction();
-        public float GetRunSpeed();
-        public float GetJumpForce();
+        public float Friction { get;}
+        public float RunSpeed { get;}
+        public float JumpForce { get;}
     }
 }
 

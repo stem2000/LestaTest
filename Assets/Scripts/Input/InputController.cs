@@ -6,7 +6,6 @@ namespace Player
     public class InputController : MonoBehaviour, IInputProvider
     {
         protected PlayerInput _playerInput;
-        private bool _isJumpTriggered = false;
 
         private void Awake()
         {

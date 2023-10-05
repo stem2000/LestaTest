@@ -30,8 +30,8 @@ namespace Player
 
         private void Run()
         {
-            var velocity = _inputProvider.GetDirectionInput() * _statsProvider.GetRunSpeed();
-            var friction = _statsProvider.GetFriction();
+            var velocity = _inputProvider.GetDirectionInput() * _statsProvider.RunSpeed;
+            var friction = _statsProvider.Friction;
 
             _rigidbody.AddForce(velocity, ForceMode.VelocityChange);
             _rigidbody.AddForce(-_rigidbody.velocity.x * friction, 0f, -_rigidbody.velocity.z * friction , ForceMode.VelocityChange);
@@ -39,7 +39,7 @@ namespace Player
 
         private void Jump()
         {
-            _rigidbody.AddForce(Vector3.up * _statsProvider.GetJumpForce(), ForceMode.Impulse);
+            _rigidbody.AddForce(Vector3.up * _statsProvider.JumpForce, ForceMode.VelocityChange);
         }
 
         public void HandleStateSwap(Type stateType)
