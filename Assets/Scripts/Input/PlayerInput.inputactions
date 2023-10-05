@@ -24,8 +24,8 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Point",
-                    "type": "PassThrough",
+                    "name": "Rotate",
+                    "type": "Value",
                     "id": "5bf1f5ee-146b-4e11-a98d-ab46b3ad8dcd",
                     "expectedControlType": "Vector2",
                     "processors": "",
@@ -103,11 +103,11 @@
                 {
                     "name": "",
                     "id": "7a68953c-855e-4fa6-b115-75f2e23f1178",
-                    "path": "<Mouse>/position",
+                    "path": "<Mouse>/delta",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Point",
+                    "action": "Rotate",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

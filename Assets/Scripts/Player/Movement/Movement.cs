@@ -29,10 +29,10 @@ namespace Player
 
         private void Run()
         {
-            var velocity = _inputProvider.GetDirectionInput() * 10;
+            var velocity = _inputProvider.GetDirectionInput() * 5;
 
             velocity.y = _rigidbody.velocity.y;
-            _rigidbody.velocity = velocity;
+            _rigidbody.AddForce(velocity, ForceMode.VelocityChange);
         }
 
         private void Jump()

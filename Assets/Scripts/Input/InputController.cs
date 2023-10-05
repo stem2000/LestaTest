@@ -27,9 +27,10 @@ namespace Player
             return _playerInput.Gameplay.Jump.ReadValue<bool>();
         }
 
-        public Vector3 GetRotationInput()
+        public Vector2 GetRotationInput()
         {
-            return Vector3.zero;
+            var rotation = _playerInput.Gameplay.Rotate.ReadValue<Vector2>();
+            return new Vector3();
         }
     }
 }

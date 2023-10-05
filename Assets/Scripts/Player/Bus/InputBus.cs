@@ -30,12 +30,12 @@ namespace Player
                 return false;
         }
 
-        public Vector3 GetRotationInput()
+        public Vector2 GetRotationInput()
         {
             if (_inputProvider != null)
                 return _inputProvider.GetRotationInput();
             else
-                return Vector3.zero;
+                return Vector2.zero;
         }
     }
 }
