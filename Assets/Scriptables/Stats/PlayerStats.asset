@@ -14,4 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _friction: 0.5
   _runSpeed: 5
-  _jumpForce: 10
+  _jumpForce: 20
+  _flySpeed: 3
+  _maxFlySpeed: 5

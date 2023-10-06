@@ -36,7 +36,7 @@ namespace Player
                 if (CanSwapStates(_states[i], _currentState))
                 {
                     _currentState = _states[i];
-                    _stateWasSwapped = true;
+                    _stateWasSwapped = true;                  
                 }
             }
 

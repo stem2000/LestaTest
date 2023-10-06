@@ -15,3 +15,4 @@ MonoBehaviour:
   _upperStates:
   - {fileID: 11400000}
   - {fileID: 11400000, guid: 8e6ed24ce987bd7479eafb9b40d86d55, type: 2}
+  - {fileID: 11400000, guid: 2a5e718734104bb4e98fd85ed628ff02, type: 2}

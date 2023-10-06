@@ -1,18 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
+using Player;
 using UnityEngine;
 
-public class FlyState : MonoBehaviour
+[CreateAssetMenu(menuName = "Scriptables/StateMachine/States/FlyState")]
+public class FlyState : State
 {
-    // Start is called before the first frame update
-    void Start()
+    IWorldInteractionsProvider _worldInteractionsProvider;
+    public override void Initialize(IComponentsProvider componentsProvider)
     {
-        
+        _worldInteractionsProvider = componentsProvider.GetWorldInteractionProvider();
     }
 
-    // Update is called once per frame
-    void Update()
+    public override bool WantSwapDown()
     {
-        
+        return _worldInteractionsProvider.IsOnGround;
+    }
+
+    public override bool WantSwapUp()
+    {
+        return !_worldInteractionsProvider.IsOnGround;
     }
 }
