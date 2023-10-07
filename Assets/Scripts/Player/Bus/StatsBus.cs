@@ -12,11 +12,5 @@ namespace Player
         {
             _stats = stats;
         }
-
-        float IStatsProvider.Friction { get {return _stats.Friction;} }
-        float IStatsProvider.RunSpeed { get { return _stats.RunSpeed; } }
-        float IStatsProvider.JumpForce { get { return _stats.JumpForce; } }
-        float IStatsProvider.FlySpeed { get { return _stats.FlySpeed;} }
-        float IStatsProvider.MaxFlySpeed { get { return _stats.FlyMaxSpeed; } }
     }
 }

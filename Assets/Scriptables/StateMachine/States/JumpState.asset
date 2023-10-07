@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e2b0da5615425740aa6c565999bae58, type: 3}
   m_Name: JumpState
   m_EditorClassIdentifier: 
-  _upperStates: []
+  _upperStates:
+  - {fileID: 11400000}

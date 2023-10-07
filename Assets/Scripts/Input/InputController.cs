@@ -24,7 +24,7 @@ namespace Player
 
         public bool GetJumpInput()
         {
-            return _playerInput.Gameplay.Jump.triggered;
+            return _playerInput.Gameplay.Jump.IsPressed();
         }
 
         public Vector2 GetRotationInput()
