@@ -47,10 +47,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _HorizonBlend: 30
+    - _HorizonBlend: 9.5
     - _NadirBlend: 1
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _StarHeight: 231.6
+    - _StarIntencity: 261
+    - _StarPower: 55
     - _ZenithBlend: 1
     m_Colors:
     - _GroundColor: {r: 0.24959952, g: 0.5378688, b: 0.745283, a: 0}
