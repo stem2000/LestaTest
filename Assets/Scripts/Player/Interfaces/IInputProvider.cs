@@ -6,7 +6,7 @@ namespace Player
     {
         public Vector3 GetDirectionInput();
         public bool GetJumpInput();
-        public Vector2 GetRotationInput();
+        public Vector2 GetMouseDeltaInput();
     }
 }
 

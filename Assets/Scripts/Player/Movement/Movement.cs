@@ -48,14 +48,14 @@ namespace Player
 
         private void Jump()
         {
-            _rb.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
+            _rb.AddRelativeForce(Vector3.up * _jumpForce, ForceMode.Impulse);
         }
 
         private void Run()
         {
             var velocity = _inputProvider.GetDirectionInput() * _runSpeed;
 
-            _rb.AddForce(velocity, ForceMode.VelocityChange);
+            _rb.AddRelativeForce(velocity, ForceMode.VelocityChange);
             ControlHorizontalSpeed(_runSpeed);
         }
 
@@ -76,7 +76,7 @@ namespace Player
             
             velocity.y = -_downForce;
 
-            _rb.AddForce(velocity, ForceMode.VelocityChange);
+            _rb.AddRelativeForce(velocity, ForceMode.VelocityChange);
             ControlHorizontalSpeed(_flySpeed);
         }
  

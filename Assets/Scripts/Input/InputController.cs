@@ -27,10 +27,10 @@ namespace Player
             return _playerInput.Gameplay.Jump.IsPressed();
         }
 
-        public Vector2 GetRotationInput()
+        public Vector2 GetMouseDeltaInput()
         {
             var rotation = _playerInput.Gameplay.Rotate.ReadValue<Vector2>();
-            return new Vector3();
+            return rotation;
         }
     }
 }

@@ -30,10 +30,10 @@ namespace Player
                 return false;
         }
 
-        public Vector2 GetRotationInput()
+        public Vector2 GetMouseDeltaInput()
         {
             if (_inputProvider != null)
-                return _inputProvider.GetRotationInput();
+                return _inputProvider.GetMouseDeltaInput();
             else
                 return Vector2.zero;
         }
