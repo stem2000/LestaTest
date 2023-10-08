@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace Player
+namespace PlayerLogic
 {
-    public interface IInitializedComponent
+    public interface IInitializableComponent
     {
         public void Initialize(IComponentsProvider componentsProvider);
     }

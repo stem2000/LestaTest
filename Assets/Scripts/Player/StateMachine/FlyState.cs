@@ -1,4 +1,4 @@
-using Player;
+using PlayerLogic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Scriptables/StateMachine/States/FlyState")]

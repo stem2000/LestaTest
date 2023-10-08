@@ -1,8 +1,9 @@
 using System;
 using UnityEngine;
 
-namespace Player
+namespace PlayerLogic
 {
+    [RequireComponent(typeof(Player))]
     public class PlayerBus : MonoBehaviour, IComponentsProvider
     {
         [SerializeField] private StateMachine _stateMachine;
@@ -31,7 +32,7 @@ namespace Player
             _worldInteractionsProvider = new WorldInteractionsBus(GetComponent<IWorldInteractionsProvider>());
 
             _stateMachine.Initialize(this);
-            foreach(var component in GetComponents<IInitializedComponent>())
+            foreach(var component in GetComponents<IInitializableComponent>())
                 component.Initialize(this);
         }
 

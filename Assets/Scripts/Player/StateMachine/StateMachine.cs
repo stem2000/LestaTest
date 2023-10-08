@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Player
+namespace PlayerLogic
 {
     [CreateAssetMenu(menuName = "Scriptables/StateMachine/StateMachine")]
     public class StateMachine : ScriptableObject

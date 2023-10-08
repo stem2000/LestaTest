@@ -2,10 +2,10 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Player
+namespace PlayerLogic
 {
-    [RequireComponent(typeof(Rigidbody), typeof(IInitializedComponent))]
-    public class Movement : MonoBehaviour, IStateSwapHandler, IInitializedComponent
+    [RequireComponent(typeof(Rigidbody), typeof(IInitializableComponent))]
+    public class Movement : MonoBehaviour, IStateSwapHandler, IInitializableComponent
     {
         [SerializeField] private float _groundDrag;
         [SerializeField] private float _runSpeed;

@@ -1,4 +1,4 @@
-using Player;
+using PlayerLogic;
 using System;
 using System.Collections.Generic;
 using UnityEngine;

@@ -1,9 +1,9 @@
-using Player;
+using PlayerLogic;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Player
+namespace PlayerLogic
 {
     public class InputBus : IInputProvider
     {

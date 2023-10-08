@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
-namespace Player
+namespace PlayerLogic
 {
-    [RequireComponent(typeof(IInitializedComponent))]
-    public class Rotation : MonoBehaviour, IInitializedComponent
+    [RequireComponent(typeof(IInitializableComponent))]
+    public class Rotation : MonoBehaviour, IInitializableComponent
     {
         [SerializeField] private Transform _cameraTarget;
         [SerializeField] private float _mouseSense;

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Player
+namespace PlayerLogic
 {
     [CreateAssetMenu(menuName = "Scriptables/StateMachine/States/IdleState")]
     public class IdleState : State

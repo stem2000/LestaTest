@@ -1,7 +1,7 @@
 using UnityEngine;
 using System;
 
-namespace Player
+namespace PlayerLogic
 {
     public interface IStateSwapHandler 
     {

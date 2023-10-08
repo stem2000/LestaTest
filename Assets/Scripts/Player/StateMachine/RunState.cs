@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Player
+namespace PlayerLogic
 {
     [CreateAssetMenu(menuName = "Scriptables/StateMachine/States/RunState")]
     public class RunState : State
