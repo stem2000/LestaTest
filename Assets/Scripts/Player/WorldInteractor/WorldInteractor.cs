@@ -1,11 +1,13 @@
 using UnityEngine;
 using GeneralLogic;
+using UnityEngine.Events;
 
 namespace PlayerLogic
 {
-    public class WorldInteractor : MonoBehaviour, IWorldInteractionsProvider, IDamageable
+    [RequireComponent(typeof(IComponentsProvider))]
+    public class WorldInteractor : MonoBehaviour, IWorldInteractionsProvider, IInitializableComponent, IDamageable
     {
-        bool IWorldInteractionsProvider.IsOnGround { get { return _grounded;}  }
+        bool IWorldInteractionsProvider.IsOnGround { get { return _grounded;} }
 
         private bool _grounded;
 
@@ -20,6 +22,11 @@ namespace PlayerLogic
             foreach (var contact in collision.contacts)
                 if (Vector3.Angle(contact.normal, Vector3.up) < 45)
                     _grounded = true;
+        }
+
+        public void Initialize(IComponentsProvider componentsProvider)
+        {
+
         }
 
         public void GetDamage(float damage)

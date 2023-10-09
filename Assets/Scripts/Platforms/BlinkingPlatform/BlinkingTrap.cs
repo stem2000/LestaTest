@@ -34,7 +34,7 @@ namespace Platforms
             if (CheckIfDamageable(damageable) && _isActivated)
             {
                 _damageables.Add(damageable);
-                StartCoroutine("ActivateTrap");
+                StartCoroutine(ActivateTrap());
             }
         }
 
@@ -59,7 +59,7 @@ namespace Platforms
             Blink(_activationColor);
             yield return new WaitForSeconds(_damageDelay);
             ApplyDamage();
-            StartCoroutine("ResetTrap");
+            StartCoroutine(ResetTrap());
         }
 
         private void ApplyDamage()
@@ -67,7 +67,6 @@ namespace Platforms
             Blink(_damageColor);
             foreach(var damageable in _damageables)
             {
-                Debug.Log("MakeDamage");
                 damageable.GetDamage(_damage);
             }
         }

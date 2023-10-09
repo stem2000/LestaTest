@@ -12,8 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bac4320034ad95042954ea839d759ee9, type: 3}
   m_Name: PlayerStats
   m_EditorClassIdentifier: 
-  _friction: 0.5
-  _runSpeed: 5
-  _jumpForce: 20
-  _flySpeed: 3
-  _maxFlySpeed: 5
+  _hp:
+    ReferenceValue: 100
+    CurrentValue: 100
