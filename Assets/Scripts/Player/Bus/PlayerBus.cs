@@ -3,7 +3,6 @@ using UnityEngine;
 
 namespace PlayerLogic
 {
-    [RequireComponent(typeof(Player))]
     public class PlayerBus : MonoBehaviour, IComponentsProvider
     {
         [SerializeField] private StateMachine _stateMachine;
