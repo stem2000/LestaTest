@@ -7,7 +7,7 @@ namespace PlayerLogic
     public interface IComponentsProvider
     {
         public IInputProvider GetInputProvider();
-        public IStatsProvider GetStatsProvider();
+        public IStatsManager GetStatsProvider();
         public IWorldInteractionsProvider GetWorldInteractionProvider();
     }
 }

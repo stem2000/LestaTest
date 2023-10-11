@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cb820097e96bea48a74162f6d484288, type: 3}
-  m_Name: FlyState
+  m_Script: {fileID: 11500000, guid: 5b27a6a12c766674c8231efd2c55a1ba, type: 3}
+  m_Name: DeathState
   m_EditorClassIdentifier: 
   _upperStates:
   - {fileID: 11400000}
-  - {fileID: 11400000, guid: 452ad95d45654e24a9a1f71e5c8514a5, type: 2}

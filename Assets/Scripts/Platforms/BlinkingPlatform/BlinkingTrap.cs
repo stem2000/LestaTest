@@ -67,7 +67,7 @@ namespace Platforms
             Blink(_damageColor);
             foreach(var damageable in _damageables)
             {
-                damageable.GetDamage(_damage);
+                damageable.MakeDamage(_damage);
             }
         }
 

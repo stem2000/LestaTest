@@ -9,7 +9,7 @@ namespace PlayerLogic
         [SerializeField] private PlayerStats _stats;
 
         private IInputProvider _inputProvider;
-        private IStatsProvider _statsProvider;
+        private IStatsManager _statsManager;
         private IWorldInteractionsProvider _worldInteractionsProvider;
 
 
@@ -27,7 +27,7 @@ namespace PlayerLogic
         private void InitializeComponents()
         {
             _inputProvider = new InputBus(GetComponent<IInputProvider>());
-            _statsProvider = new StatsBus(_stats);
+            _statsManager = new StatsBus(_stats);
             _worldInteractionsProvider = new WorldInteractionsBus(GetComponent<IWorldInteractionsProvider>());
 
             _stateMachine.Initialize(this);
@@ -47,9 +47,9 @@ namespace PlayerLogic
             return _inputProvider;
         }
 
-        public IStatsProvider GetStatsProvider()
+        public IStatsManager GetStatsProvider()
         {
-            return _statsProvider;
+            return _statsManager;
         }
 
         public IWorldInteractionsProvider GetWorldInteractionProvider()

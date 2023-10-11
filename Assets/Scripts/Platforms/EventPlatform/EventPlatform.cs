@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using PlayerLogic;
 
 public class EventPlatform : MonoBehaviour
 {
@@ -9,7 +8,7 @@ public class EventPlatform : MonoBehaviour
 
     private bool _wasLineTriggered = false;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider collider)
     {
         if (!_wasLineTriggered)
             ReactToTrigger();
@@ -18,6 +17,6 @@ public class EventPlatform : MonoBehaviour
     private void ReactToTrigger()
     {
         _wasLineTriggered = true;
-        _onLineTriggered.Invoke();
+        _onLineTriggered?.Invoke();
     }
 }

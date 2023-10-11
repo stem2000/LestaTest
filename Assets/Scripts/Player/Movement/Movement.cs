@@ -79,6 +79,11 @@ namespace PlayerLogic
             _rb.AddRelativeForce(velocity, ForceMode.VelocityChange);
             ControlHorizontalSpeed(_flySpeed);
         }
+
+        private void MoveInertial()
+        {
+            return;
+        }
  
         public void HandleStateSwap(Type stateType)
         {
@@ -90,6 +95,8 @@ namespace PlayerLogic
                 Jump();
             if(stateType == typeof(FlyState))
                 _currentMove = Fly;
+            if(stateType == typeof(DeathState))
+                _currentMove = MoveInertial;
         }
 
         public void Initialize(IComponentsProvider componentsProvider)

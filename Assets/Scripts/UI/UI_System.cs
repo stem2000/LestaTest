@@ -21,7 +21,7 @@ namespace Game_UI
         {
             _screens = GetComponentsInChildren<UI_Screen>(true);
 
-            InitializeScreens();
+            //InitializeScreens();
 
             if(_startScreen)
                 SwitchScreen(_startScreen);
