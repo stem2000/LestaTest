@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
         SpawnPlayer();
         _timer = new GameObject("Timer").AddComponent<GameTimer>();
         OnPlayerSpawned?.Invoke();
+        LockCursor();
     }
 
     private void FixedUpdate()
@@ -58,6 +59,7 @@ public class GameManager : MonoBehaviour
     private void ReactToPlayerDeath()
     {
         _timer.StopTimer();
+        UnlockCursor();
         _playerTransform.gameObject.SetActive(false);
         OnPlayerLose?.Invoke();
     }
@@ -65,6 +67,7 @@ public class GameManager : MonoBehaviour
     public void ReactToPlayerWin()
     {
         _timer.StopTimer();
+        UnlockCursor();
         _playerTransform.gameObject.SetActive(false);
         OnPlayerWin?.Invoke(_timer.GameTime);
     }
@@ -77,5 +80,17 @@ public class GameManager : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    private void LockCursor()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
+    private void UnlockCursor()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }

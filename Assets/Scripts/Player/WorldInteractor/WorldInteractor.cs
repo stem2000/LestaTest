@@ -2,6 +2,7 @@ using UnityEngine;
 using GeneralLogic;
 using UnityEngine.Events;
 using System;
+using System.Collections;
 
 namespace PlayerLogic
 {
@@ -22,7 +23,7 @@ namespace PlayerLogic
 
         private void OnCollisionStay(Collision collision)
         {
-            foreach (var contact in collision.contacts)
+            foreach(var contact in collision.contacts)
                 if (Vector3.Angle(contact.normal, Vector3.up) < 45)
                     _grounded = true;
         }
