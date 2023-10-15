@@ -2204,10 +2204,10 @@ GameObject:
   - component: {fileID: 7577953819748144901}
   - component: {fileID: 7577953819748144906}
   - component: {fileID: 7577953819748144902}
-  - component: {fileID: 7577953819748144897}
   - component: {fileID: 7577953819748144896}
   - component: {fileID: 6191037452982541535}
   - component: {fileID: 2164636565215605128}
+  - component: {fileID: 7908335025461234320}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2301,24 +2301,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7bc702f5c1bb9444ae996512b11f82a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _coyoteTime: 2
---- !u!114 &7577953819748144897
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7577953819748144911}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e867b3291c53ed34f9f08bbd193b6581, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _groundDrag: 10
-  _runSpeed: 4
-  _jumpForce: 30
-  _flySpeed: 4
-  _downForce: 1
 --- !u!114 &7577953819748144896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2361,6 +2343,23 @@ MonoBehaviour:
   _audioSource: {fileID: 2519124647209122892}
   _runClip: {fileID: 8300000, guid: 730efb677398f6f48b2b03b898bb6638, type: 3}
   _JumpClip: {fileID: 8300000, guid: aeaf1747e0e23a34c91e8d19f4fd5b46, type: 3}
+--- !u!114 &7908335025461234320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7577953819748144911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e867b3291c53ed34f9f08bbd193b6581, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _groundDrag: 10
+  _runSpeed: 4
+  _jumpForce: 30
+  _flySpeed: 4
+  _downForce: 1
 --- !u!1 &7725202380859967005
 GameObject:
   m_ObjectHideFlags: 0

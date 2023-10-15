@@ -19,6 +19,7 @@ namespace PlayerLogic
         {
             InitializeStates(componentsProvider);
             _currentState = CreateInstance<IdleState>();
+            OnStateWasSwapped = new UnityEvent<Type>();
         }
 
         private void InitializeStates(IComponentsProvider componentsProvider)

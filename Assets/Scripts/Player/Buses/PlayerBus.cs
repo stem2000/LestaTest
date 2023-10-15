@@ -31,6 +31,7 @@ namespace PlayerLogic
             _worldInteractionsProvider = new WorldInteractionsBus(GetComponent<IWorldInteractionsProvider>());
 
             _stateMachine.Initialize(this);
+
             foreach(var component in GetComponents<IInitializableComponent>())
                 component.Initialize(this);
         }
@@ -38,8 +39,9 @@ namespace PlayerLogic
         private void SubscribeComponentsToStateMachine()
         {
             foreach(var handler in GetComponents<IStateSwapHandler>())
+            {
                 _stateMachine.AddStateSwapHandler(handler);
-                
+            }  
         }
 
         public IInputProvider GetInputProvider()

@@ -35,7 +35,7 @@ namespace PlayerLogic
 
         private void UpdateDrag()
         {
-            if(_worldInteractor.IsOnGround)
+            if (_worldInteractor.IsOnGround)
                 _rb.drag = _groundDrag;
             else
                 _rb.drag = 0;
@@ -63,7 +63,7 @@ namespace PlayerLogic
         {
             var velocity = new Vector3(_rb.velocity.x, 0f, _rb.velocity.z);
 
-            if(velocity.magnitude > maxSpeed)
+            if (velocity.magnitude > maxSpeed)
             {
                 var limVelocity = velocity.normalized * maxSpeed;
                 _rb.velocity = new Vector3(limVelocity.x, _rb.velocity.y, limVelocity.z);
@@ -73,7 +73,7 @@ namespace PlayerLogic
         private void Fly()
         {
             var velocity = _inputProvider.GetDirectionInput() * _flySpeed;
-            
+
             velocity.y = -_downForce;
 
             _rb.AddRelativeForce(velocity, ForceMode.VelocityChange);
@@ -84,18 +84,18 @@ namespace PlayerLogic
         {
             return;
         }
- 
+
         public void HandleStateSwap(Type stateType)
         {
-            if(stateType == typeof(IdleState))
+            if (stateType == typeof(IdleState))
                 _currentMove = Idle;
-            if(stateType == typeof(RunState))
+            if (stateType == typeof(RunState))
                 _currentMove = Run;
-            if(stateType == typeof(JumpState))
+            if (stateType == typeof(JumpState))
                 Jump();
-            if(stateType == typeof(FlyState))
+            if (stateType == typeof(FlyState))
                 _currentMove = Fly;
-            if(stateType == typeof(DeathState))
+            if (stateType == typeof(DeathState))
                 _currentMove = MoveInertial;
         }
 
